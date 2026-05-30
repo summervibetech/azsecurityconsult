@@ -35,6 +35,7 @@ function BrandIcon({ size = 36 }: { size?: number }) {
 
 const btnBase = "flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold uppercase tracking-wide transition-colors";
 const primaryBtn = `${btnBase} bg-blue-700 text-white hover:bg-blue-800`;
+const outlineBtn = `${btnBase} border border-slate-300 text-slate-700 hover:bg-slate-50`;
 
 export default function Navigation() {
   const pathname = usePathname();
