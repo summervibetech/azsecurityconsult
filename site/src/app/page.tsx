@@ -138,15 +138,8 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="relative overflow-hidden py-20">
-        <Image
-          src="https://images.unsplash.com/photo-1497366754035-f200968a333e?w=1920&q=80"
-          alt="Modern office building"
-          fill
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-blue-50/90" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-blue-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Our Services</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">A structured, professional review of your property's security posture with actionable results.</p>
