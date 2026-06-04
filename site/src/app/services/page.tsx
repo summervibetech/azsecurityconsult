@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Security Assessment Services | AZ Security Consulting",
-  description: "Onsite threat assessments, security operations reviews, technology evaluations, and written risk reports for residential and commercial properties.",
+  description: "Onsite threat assessments, security operations reviews, and technology evaluations for residential and commercial properties.",
 };
 
 const services = [

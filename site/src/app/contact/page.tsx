@@ -107,8 +107,8 @@ export default function ContactPage() {
                 </div>
                 <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Email</p>
               </div>
-              <a href="mailto:contact@azsecurityconsult.com" className="text-sm font-medium text-blue-700 hover:text-blue-800 whitespace-nowrap">
-                contact@azsecurityconsult.com
+              <a href="mailto:rstein@virtualservice.net" className="text-sm font-medium text-blue-700 hover:text-blue-800 whitespace-nowrap">
+                rstein@virtualservice.net
               </a>
             </div>
 

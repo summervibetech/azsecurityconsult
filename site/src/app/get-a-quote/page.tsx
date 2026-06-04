@@ -24,6 +24,8 @@ const timingOptions = [
 
 export default function GetAQuotePage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -41,9 +43,27 @@ export default function GetAQuotePage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        setError(data.error ?? "Something went wrong. Please try again.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError("Unable to send your request. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -271,10 +291,14 @@ export default function GetAQuotePage() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 rounded-lg text-sm transition-colors"
+                    disabled={loading}
+                    className="w-full bg-blue-700 hover:bg-blue-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg text-sm transition-colors"
                   >
-                    Submit Property for Review
+                    {loading ? "Sending…" : "Submit Property for Review"}
                   </button>
+                  {error && (
+                    <p className="text-xs text-red-600 mt-2 text-center">{error}</p>
+                  )}
                   <p className="text-xs text-slate-400 mt-3 text-center">
                     Your information will be used only to contact you about your assessment request.
                   </p>
