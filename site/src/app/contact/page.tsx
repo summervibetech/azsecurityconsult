@@ -96,7 +96,7 @@ export default function ContactPage() {
       {/* Contact info */}
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {/* Email */}
             <div className="flex flex-col gap-2 bg-slate-50 rounded-xl px-5 py-4 border border-slate-100">
               <div className="flex items-center gap-2">
@@ -139,6 +139,21 @@ export default function ContactPage() {
               </div>
               <a href="https://www.virtualdoorman.com" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-blue-700 hover:text-blue-800">
                 www.virtualdoorman.com
+              </a>
+            </div>
+
+            {/* Digital solutions */}
+            <div className="flex flex-col gap-2 bg-slate-50 rounded-xl px-5 py-4 border border-slate-100">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 bg-blue-50 text-blue-700 rounded-lg flex items-center justify-center shrink-0">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" />
+                  </svg>
+                </div>
+                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Digital Solutions</p>
+              </div>
+              <a href="https://www.summervibe.tech" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-blue-700 hover:text-blue-800">
+                www.summervibe.tech
               </a>
             </div>
           </div>

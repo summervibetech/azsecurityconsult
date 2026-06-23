@@ -2,11 +2,18 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Security Assessment Services | AZ Security Consulting",
-  description: "Onsite threat assessments, security operations reviews, and technology evaluations for residential and commercial properties.",
+  title: "Services | AZ Security Consulting",
+  description: "Onsite threat assessments, security operations reviews, technology evaluations, and web & digital solutions for businesses.",
 };
 
-const services = [
+const services: {
+  id: string;
+  title: string;
+  desc: string;
+  areas: string[];
+  areasLabel?: string;
+  link?: { href: string; label: string; external?: boolean };
+}[] = [
   {
     id: "onsite-threat-assessment",
     title: "Onsite Threat Assessment",
@@ -75,6 +82,23 @@ const services = [
       "Ongoing security support options",
     ],
   },
+  {
+    id: "web-design-digital-solutions",
+    title: "Web & Digital Solutions",
+    desc: "Modern, professional websites and digital strategy consulting to strengthen your business's online presence. From concept to launch, we help businesses establish credibility and connect with their audience through thoughtfully designed digital experiences.",
+    areasLabel: "What's Included",
+    areas: [
+      "Website design & development",
+      "Mobile-responsive layouts",
+      "Brand identity & visual design",
+      "Landing page optimization",
+      "SEO-ready structure",
+      "Content strategy",
+      "Domain & hosting setup",
+      "Ongoing maintenance support",
+    ],
+    link: { href: "https://www.summervibe.tech", label: "View Our Work", external: true },
+  },
 ];
 
 export default function ServicesPage() {
@@ -86,10 +110,10 @@ export default function ServicesPage() {
           <div className="max-w-2xl">
             <p className="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-3">Services</p>
             <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Security Assessment Services
+              Our Services
             </h1>
             <p className="text-slate-300 text-lg leading-relaxed">
-              A structured set of professional services designed to help property owners, managers, and boards understand and address their real-world security risks.
+              From physical security assessments to web design and digital strategy, we help businesses and property owners build safer, stronger foundations.
             </p>
           </div>
         </div>
@@ -113,19 +137,33 @@ export default function ServicesPage() {
                     <h2 className="text-2xl font-bold text-slate-900">{service.title}</h2>
                   </div>
                   <p className="text-slate-600 leading-relaxed mb-6">{service.desc}</p>
-                  <Link
-                    href="/get-a-quote"
-                    className="inline-flex items-center gap-2 text-blue-700 font-semibold text-sm hover:text-blue-800"
-                  >
-                    Get a Quote
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </Link>
+                  {service.link?.external ? (
+                    <a
+                      href={service.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-blue-700 font-semibold text-sm hover:text-blue-800"
+                    >
+                      {service.link.label}
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <Link
+                      href={service.link?.href ?? "/get-a-quote"}
+                      className="inline-flex items-center gap-2 text-blue-700 font-semibold text-sm hover:text-blue-800"
+                    >
+                      {service.link?.label ?? "Get a Quote"}
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </Link>
+                  )}
                 </div>
                 <div className={`bg-slate-50 rounded-xl p-6 border border-slate-100 ${i % 2 === 1 ? "lg:col-start-1" : ""}`}>
                   <h3 className="font-semibold text-slate-900 text-sm mb-4 uppercase tracking-wider">
-                    Areas Covered
+                    {service.areasLabel ?? "Areas Covered"}
                   </h3>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {service.areas.map((area) => (

@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} AZ Security Consulting. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AZ Security Consulting LLC. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/contact" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
             <Link href="/contact" className="hover:text-slate-300 transition-colors">Terms of Use</Link>
