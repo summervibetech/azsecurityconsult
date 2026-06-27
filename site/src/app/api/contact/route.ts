@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const TO_EMAIL = "rstein@virtualservice.net";
+const TO_EMAIL = "az.securityconsult@gmail.com";
 
 export async function POST(request: NextRequest) {
   const body = await request.json();

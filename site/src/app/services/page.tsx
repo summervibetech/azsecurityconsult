@@ -84,7 +84,7 @@ const services: {
   },
   {
     id: "web-design-digital-solutions",
-    title: "Web & Digital Solutions",
+    title: "Digital Solution Consultation",
     desc: "Modern, professional websites and digital strategy consulting to strengthen your business's online presence. From concept to launch, we help businesses establish credibility and connect with their audience through thoughtfully designed digital experiences.",
     areasLabel: "What's Included",
     areas: [
