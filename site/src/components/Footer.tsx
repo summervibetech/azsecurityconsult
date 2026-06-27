@@ -44,8 +44,8 @@ export default function Footer() {
             <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="mailto:rstein@virtualservice.net" className="hover:text-white transition-colors break-all">
-                  rstein@virtualservice.net
+                <a href="mailto:az.securityconsult@gmail.com" className="hover:text-white transition-colors break-all">
+                  az.securityconsult@gmail.com
                 </a>
               </li>
               <li>
